@@ -20,10 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print MESSAGE
-        run: echo "Message: ${{ inputs.MESSAGE }}"
-
+        run: echo "Message ${{ inputs.MESSAGE }}"
       - name: Print USER_NAME
-        run: echo "User Name: ${{ inputs.USER_NAME }}"
-
+        run: echo "User Name ${{ inputs.USER_NAME }}"
       - name: Print ENVIRONMENT
-        run: echo "Environment: ${{ inputs.ENVIRONMENT }}"
+        run: echo "Environment ${{ inputs.ENVIRONMENT }}"
