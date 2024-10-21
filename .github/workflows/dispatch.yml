@@ -6,7 +6,12 @@ on:
       MESSAGE:
         description: "Message to echo"
         required: true
-        default: "Hello, World!"
+        default: "info"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug        
       USER_NAME:
         description: "User's name"
         required: false
@@ -14,6 +19,11 @@ on:
         description: "Deployment environment"
         required: true
         default: "development"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug        
 
 jobs:
   echo-inputs:
