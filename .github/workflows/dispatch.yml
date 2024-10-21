@@ -1,0 +1,29 @@
+name: Test Workflow Dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      MESSAGE:
+        description: "Message to echo"
+        required: true
+        default: "Hello, World!"
+      USER_NAME:
+        description: "User's name"
+        required: false
+      ENVIRONMENT:
+        description: "Deployment environment"
+        required: true
+        default: "development"
+
+jobs:
+  echo-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print MESSAGE
+        run: echo "Message: ${{ github.event.inputs.MESSAGE }}"
+
+      - name: Print USER_NAME
+        run: echo "User Name: ${{ github.event.inputs.USER_NAME }}"
+
+      - name: Print ENVIRONMENT
+        run: echo "Environment: ${{ github.event.inputs.ENVIRONMENT }}"
